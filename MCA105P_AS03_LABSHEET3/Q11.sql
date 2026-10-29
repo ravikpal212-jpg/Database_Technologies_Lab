@@ -1,0 +1,3 @@
+/* Full Question: DCL - User Provisioning & Granting] Audit pre-created user 'dev_user'@'localhost' and write the statement to grant additional DELETE permission on company_db.orders. Target Context: Target Account: 'dev_user'@'localhost' (Pre-created, Level 2: SELECT, INSERT, UPDATE on company_db.*) Q12. [TCL - Multi-Step Savepoint Workflow] As 'hr_assistant'@'localhost', write a transaction block to update salary for emp_101 to 80000.00, create savepoint sp_first, update salary for emp_102 to 95000.00, roll back to sp_first, and commit. Target Context: Active Session: 'hr_assistant'@'localhost' | employees (emp_101 = 75000, emp_102 = 52000) */
+
+GRANT DELETE ON company_db.orders TO 'dev_user'@'localhost';
