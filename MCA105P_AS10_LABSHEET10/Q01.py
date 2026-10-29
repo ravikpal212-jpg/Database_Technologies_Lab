@@ -1,0 +1,6 @@
+/* Full Question: Create a MongoDB database named HospitalDB and a collection named medicines. Insert at least 8 medicine documents containing medicine_id, name, category, price, stock, and manufacturer. Verify the documents using MongoDB. */
+
+from pymongo import MongoClient
+db=MongoClient('mongodb://localhost:27017/')['HospitalDB']; medicines=db['medicines']
+medicines.insert_many([{'medicine_id':301,'name':'Paracetamol','category':'Analgesic','price':25,'stock':100,'manufacturer':'ABC Pharma'},{'medicine_id':302,'name':'Amoxicillin','category':'Antibiotic','price':80,'stock':50,'manufacturer':'MediCare'},{'medicine_id':303,'name':'Cetirizine','category':'Antihistamine','price':35,'stock':75,'manufacturer':'ABC Pharma'},{'medicine_id':304,'name':'Omeprazole','category':'Antacid','price':60,'stock':40,'manufacturer':'HealthPlus'},{'medicine_id':305,'name':'Azithromycin','category':'Antibiotic','price':120,'stock':25,'manufacturer':'MediCare'},{'medicine_id':306,'name':'Ibuprofen','category':'Painkiller','price':45,'stock':20,'manufacturer':'ABC Pharma'},{'medicine_id':307,'name':'Vitamin C','category':'Supplement','price':30,'stock':90,'manufacturer':'NutriLife'},{'medicine_id':308,'name':'ORS','category':'Hydration','price':20,'stock':15,'manufacturer':'HealthPlus'}])
+print(list(medicines.find({}, {'_id':0})))
